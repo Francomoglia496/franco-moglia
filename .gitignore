@@ -8,6 +8,8 @@
 .idea/**/dictionaries
 .idea/**/shelf
 .idea
+
+
 # Sensitive or high-churn files
 .idea/**/dataSources/
 .idea/**/dataSources.ids
@@ -31,7 +33,7 @@ cmake-build-*/
 *.iws
 
 # IntelliJ
-out/
+Topic_0/out
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
