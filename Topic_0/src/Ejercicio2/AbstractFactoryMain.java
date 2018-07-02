@@ -6,7 +6,6 @@ public class AbstractFactoryMain {
 
         AbstractFactory driverFactory = FactoryProducer.getFactory("Driver");
 
-        //  OBTENEMOS LOS DRIVERS PARA CADA BASE DE DATOS.
         Driver dSQL = driverFactory.getDriver("SQL");
 
         dSQL.getDriverDB();
@@ -27,7 +26,6 @@ public class AbstractFactoryMain {
 
         AbstractFactory conectionFactory = FactoryProducer.getFactory("Conection");
 
-        // OBTENEMOS LA CONEXION A LA BASE DE DATOS QUE DEAMOS
         Conection conSQL = conectionFactory.getConection("SQL");
 
         conSQL.ConectarDB();

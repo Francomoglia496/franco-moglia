@@ -1,6 +1,6 @@
 package Ejercicio3;
 
-public interface IConectarDB {
+public interface ConectarDB {
 
     public void conectarDB();
 

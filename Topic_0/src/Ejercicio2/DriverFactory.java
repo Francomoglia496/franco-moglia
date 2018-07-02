@@ -2,10 +2,6 @@ package Ejercicio2;
 
 public class DriverFactory extends AbstractFactory {
 
-
-    // EL METODO getDriver() SE ENCARGA DE RETORNAR EL DRIVER NECESARIO
-    // SEGUN EL NOMBRE DE LA BASE DE DATOS A LA CUAL QUERAMOS ACCEDER.
-
     @Override
     public Driver getDriver(String dataBase) {
 
@@ -15,15 +11,15 @@ public class DriverFactory extends AbstractFactory {
 
         }
 
-        if (dataBase.equalsIgnoreCase("SQL")){
+        if ("SQL".equalsIgnoreCase(dataBase)){
 
             return new DriverSQL();
 
-        }else if (dataBase.equalsIgnoreCase("MySQL")){
+        }else if ("MySQL".equalsIgnoreCase(dataBase)){
 
             return new DriverMySQL();
 
-        }else if (dataBase.equalsIgnoreCase("Mongo")){
+        }else if ("Mongo".equalsIgnoreCase(dataBase)){
 
             return new DriverMongo();
 
@@ -35,8 +31,6 @@ public class DriverFactory extends AbstractFactory {
 
     }
 
-    // ESTA FACTORY SOLO SE ENCARGA DE CREAR LOS DRIVERS
-    // POR ESO EL METODO getConection() RETURNA NULL.
     @Override
     Conection getConection(String dataBase) {
         return null;

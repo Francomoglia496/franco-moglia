@@ -1,6 +1,6 @@
 package Ejercicio3;
 
-public class MySQLDB implements IConectarDB {
+public class MySQLDB implements ConectarDB {
 
     @Override
     public void conectarDB() {

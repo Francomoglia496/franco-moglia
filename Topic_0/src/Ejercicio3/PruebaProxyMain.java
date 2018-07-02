@@ -6,7 +6,7 @@ public class PruebaProxyMain {
 
     public static void main(String[] args) {
 
-        IConectarDB dbMySQL = (IConectarDB) ConectionProxy.newInstance(new MySQLDB());
+        ConectarDB dbMySQL = (ConectarDB) ConectionProxy.newInstance(new MySQLDB());
 
         dbMySQL.conectarDB();
 
