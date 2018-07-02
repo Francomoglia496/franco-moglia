@@ -14,7 +14,7 @@ public class DBUnica {
         System.out.println("Conectando a DB...");
     }
 
-    public static DBUnica getInstance(String name){
+    public static synchronized DBUnica getInstance(String name){
 
         if (singletonDB == null){
             singletonDB = new DBUnica(name);
