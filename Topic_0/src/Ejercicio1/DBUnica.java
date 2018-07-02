@@ -2,14 +2,12 @@ package Ejercicio1;
 
 public class DBUnica {
 
-    public static int control = 0;
-
-    public static DBUnica singletonDB;
-    public static String DBName;
+    private static DBUnica singletonDB;
+    public static String dbName;
 
 
     private DBUnica(String name) {
-        DBName = name;
+        dbName = name;
     }
 
     public void conectarDB(){
@@ -25,7 +23,7 @@ public class DBUnica {
     }
 
     public String getDBName(){
-        return DBName;
+        return dbName;
     }
 
 
