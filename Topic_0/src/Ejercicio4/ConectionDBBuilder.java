@@ -1,17 +1,40 @@
 package Ejercicio4;
 
-public abstract class ConectionDBBuilder {
+public class ConectionDBBuilder {
 
-    protected ConectionDB con;
+    private String user;
+    private String pass;
+    private String url;
 
-    public ConectionDB getCon(){
-        return con;
+    public void withUser(String user){
+
+        this.user = user;
+
     }
 
-    public abstract void buildUser();
+    public void withPass(String pass){
 
-    public abstract void buildPass();
+        this.pass = pass;
 
-    public abstract void buildUrl();
+    }
+
+    public void withUrl(String url){
+
+        this.url = url;
+
+    }
+
+    public ConectionDB makeConection(){
+
+        ConectionDB conection = new ConectionDB();
+
+        conection.setUser(this.user);
+        conection.setPass(this.pass);
+        conection.setUrl(this.url);
+
+        return conection;
+
+    }
+
 
 }

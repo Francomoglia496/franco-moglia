@@ -4,27 +4,15 @@ public class BuilderMain {
 
     public static void main(String[] args) {
 
-        BuilderManager bm = new BuilderManager();
+        ConectionDBBuilder builder = new ConectionDBBuilder();
 
-        ConectionDBBuilder conSQLBuilder = new SQLConBuilder();
+        builder.withUser("user");
+        builder.withPass("pass123");
+        builder.withUrl("localhost:8080/MySQL/");
 
-        ConectionDBBuilder conMySQLBuilder = new MySQLConBuilder();
+        ConectionDB con = builder.makeConection();
 
-        bm.setConectionBuilder(conSQLBuilder);
-        bm.MakeConection();
-
-        ConectionDB conDB = bm.getConectionDB();
-
-        System.out.println(conDB);
-
-        System.out.println("-----------------------------");
-
-        bm.setConectionBuilder(conMySQLBuilder);
-
-        bm.MakeConection();
-
-        System.out.println(bm.getConectionDB());
-
+        System.out.println(con);
     }
 
 }

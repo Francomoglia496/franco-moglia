@@ -3,7 +3,7 @@ package Ejercicio1;
 public class DBUnica {
 
     private static DBUnica singletonDB;
-    public static String dbName;
+    private static String dbName;
 
 
     private DBUnica(String name) {
