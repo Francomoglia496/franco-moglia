@@ -11,11 +11,11 @@ public class CrearConexion {
         this.url = url;
     }
 
-    public void ConnectDB(){
+    public void connectDB(){
         this.conected = true;
     }
 
-    public void DisconnectDB(){
+    public void disconnectDB(){
         this.conected = false;
     }
 

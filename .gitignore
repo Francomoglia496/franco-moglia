@@ -11,6 +11,7 @@
 
 Topic_0/Topic_0.iml
 Topic_1/Topic_1.iml
+Topic_1/target
 
 # Sensitive or high-churn files
 .idea/**/dataSources/
