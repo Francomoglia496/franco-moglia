@@ -24,16 +24,33 @@ public class QueueSimulatorTest {
     }
 
     @Test
-    public void whenTryToAddDuplicateItemThenFail() throws Exception{
+    public void whenTryToAddDuplicateItemThenThatFileGoFirstPosition() throws Exception{
 
-        String example = "first";
-        String duplicate = "first";
+        list.addFile("15");
+        list.addFile("14");
+        list.addFile("13");
+        list.addFile("12");
+        list.addFile("11");
+        list.addFile("10");
+        list.addFile("9");
+        list.addFile("8");
+        list.addFile("7");
+        list.addFile("6");
+        list.addFile("5");
+        list.addFile("4");
+        list.addFile("3");
+        list.addFile("2");
+        list.addFile("1");
 
-        String answer1 = list.addFile(example);
+        String duplicate = "8";
 
-        String answer = list.addFile(duplicate);
+        String answer1 = list.addFile(duplicate);
 
-        assertEquals("fail", answer);
+        for (int i = 0; i < list.getRecentFilesList().size(); i++) {
+            System.out.println(list.getRecentFilesList().get(i));
+        }
+
+        assertEquals("8", list.getRecentFilesList().get(0));
 
     }
 

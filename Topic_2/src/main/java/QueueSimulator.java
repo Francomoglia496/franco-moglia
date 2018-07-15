@@ -19,6 +19,18 @@ public class QueueSimulator {
         if (recentFilesList.size() >= 15){
 
             if (recentFilesList.contains(file)){
+
+                ArrayList<String> aux = new ArrayList();
+                recentFilesList.remove(file);
+                aux.add(file);
+
+                for(String item : recentFilesList){
+                    aux.add(item);
+                }
+
+                recentFilesList.clear();
+                recentFilesList.addAll(aux);
+
                 return "fail";
             }else{
                 recentFilesList.remove(0);
