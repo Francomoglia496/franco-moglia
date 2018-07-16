@@ -1,3 +1,5 @@
+package Exercise1;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -16,7 +18,7 @@ public class QueueSimulator {
     }
 
     public String addFile(String file){
-        if (recentFilesList.size() >= 15){
+        if (recentFilesList.size() == 15){
 
             if (recentFilesList.contains(file)){
 
@@ -31,7 +33,7 @@ public class QueueSimulator {
                 recentFilesList.clear();
                 recentFilesList.addAll(aux);
 
-                return "fail";
+                return "success";
             }else{
                 recentFilesList.remove(0);
                 recentFilesList.add(file);
@@ -40,7 +42,19 @@ public class QueueSimulator {
         }else{
 
             if (recentFilesList.contains(file)){
-                return "fail";
+
+                ArrayList<String> aux = new ArrayList();
+                recentFilesList.remove(file);
+                aux.add(file);
+
+                for(String item : recentFilesList){
+                    aux.add(item);
+                }
+
+                recentFilesList.clear();
+                recentFilesList.addAll(aux);
+
+                return "success";
             }else{
                 recentFilesList.add(file);
                 return "success";
