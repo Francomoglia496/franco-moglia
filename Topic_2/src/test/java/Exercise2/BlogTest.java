@@ -1,5 +1,6 @@
 package Exercise2;
 
+import javafx.geometry.Pos;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -39,4 +40,33 @@ public class BlogTest {
 
     }
 
+    @Test
+    public void EveryPostIsUnique() throws Exception{
+
+        User user = new User("juan123");
+
+        Posteo post1 = new Posteo(0, user, "title1", "............");
+        Posteo post2 = new Posteo(0,user,"title1",".............");
+
+        String asw = blog.makePOST(post1);
+
+        String ans1 = blog.makePOST(post2);
+
+        assertEquals("fail", ans1);
+
+    }
+
+    @Test
+    public void DeletePost() throws Exception{
+
+        User user = new User("juan123");
+
+        blog.makePOST(new Posteo(0,user,"title1","qwerty2020"));
+
+        String aux = blog.deletePOST(0);
+
+        assertEquals("success", aux);
+
+
+    }
 }

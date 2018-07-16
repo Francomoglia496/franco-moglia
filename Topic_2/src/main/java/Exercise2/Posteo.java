@@ -16,15 +16,25 @@ public class Posteo {
 
     }
 
+    public int getIdPost(){
+        return idPost;
+    }
+
     public User getUser() {
         return user;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
     public String getMsg() {
         return msg;
+    }
+
+    @Override
+    public String toString() {
+        return "Posteo{" +
+                "idPost=" + idPost +
+                ", user=" + user +
+                ", title='" + title + '\'' +
+                ", msg='" + msg + '\'' +
+                '}';
     }
 }
